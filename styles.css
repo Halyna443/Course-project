@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.tabs {
+    width: 80%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(15, 15, 15, 0.1);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #ddd;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+label:hover {
+    background-color: #eee;
+}
+
+.content {
+    display: flex;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="number"],
+button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 80%;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    background-color: #f3f3f3;
+    font-family: fantasy, sans-serif;
+    font-size: 15px;
+}
+
+
+
+#showLastResultsButton,
+#getDateRangeButton,
+#getHolidaysButton {
+    font-size: 16px;
+    padding: 10px 15px;
+    background-color: #e89cf6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 380px) {
+    th,
+    td {
+        font-size: 10px;
+    }
+}
