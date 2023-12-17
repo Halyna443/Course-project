@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Проміжок дат та свята</title>
+</head>
+
+<body>
+    <div class="tabs">
+        <input type="radio" name="tab" id="tab1" checked>
+        <label for="tab1">Проміжок дат</label>
+
+        <input type="radio" name="tab" id="tab2">
+        <label for="tab2">Свята</label>
+
+        <div class="content">
+            <div class="tab-content">
+                <h3 id="text">Будь ласка, виберіть початкову дату.</h3>
+                <label for="startDate">Початкова дата:</label>
+                <input type="date" id="startDate" name="startDate">
+
+                <label for="datePreset">Пресет часу:</label>
+                <select id="datePreset" name="datePreset" disabled>
+                    <option value="manual">Вибрати вручну</option>
+                    <option value="week">Тиждень</option>
+                    <option value="month">Місяць</option>
+                </select>
+                <label for="endDate">Кінцева дата:</label>
+                <input type="date" id="endDate" name="endDate" disabled min="" max="">
+
+                <label for="options">Опції:</label>
+                <select id="options">
+                    <option value="allDays">Всі дні</option>
+                    <option value="weekdays">Будні дні</option>
+                    <option value="weekends">Вихідні дні</option>
+                </select>
+
+                <label for="calculationOptions">Вибрати опції розрахунку:</label>
+                <select id="calculationOptions">
+                    <option value="days">Порахувати кількість днів</option>
+                    <option value="hours">Порахувати кількість годин</option>
+                    <option value="minutes">Порахувати кількість хвилин</option>
+                    <option value="seconds">Порахувати кількість секунд</option>
+                </select>
+
+                <div>
+                    <button id="getDateRangeButton">Отримати проміжок дат</button>
+                </div>
+                <div id="dateRangeResult"></div>
+
+                <div id="lastResultsTable">
+                    <h3>Останні результати</h3>
+                    <button id="showLastResultsButton">Останні результати</button>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Початкова дата</th>
+                                <th>Кінцева дата</th>
+                                <th>Опції</th>
+                                <th>Результат виміру</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lastResultsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <label for="country">Вибір країни:</label>
+                <select id="country" autocomplete="off"></select>
+
+                <label for="year">Вибір року:</label>
+                <select id="year" disabled></select>
+
+                <button id="getHolidaysButton">Отримати свята</button>
+                <div id="holidaysResult">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <button id="sortDateButton"
+                                        onclick="window.holidaysTab.sortTable('lastResultsTableBodyHolidays', 0)">
+                                        Дата<img id="rotateImage" class="img" src="./Vector.svg">
+                                    </button>
+
+                                </th>
+                                <th>Назва свята</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lastResultsTableBodyHolidays"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
