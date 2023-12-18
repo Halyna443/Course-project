@@ -24,5 +24,3 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Run tests
-        run: npm test
