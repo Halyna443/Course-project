@@ -67,7 +67,7 @@ export class HolidaysTab extends Tab {
       console.log('Відповідь:', data); // Вивела відповідь в консоль, щоб перевірити формат
 
       if (response.ok) {
-        this.displayHolidays(data); // Викликала метод displayHolidays з правильними даними
+        await this.displayHolidays(data); // Викликала метод displayHolidays з правильними даними
       } else {
         console.error('Помилка отримання свят. Статус:', response.status);
       }
@@ -115,7 +115,7 @@ export class HolidaysTab extends Tab {
     }
   }
 
-  displayHolidays(holidays) {
+  async displayHolidays(holidays) {
     const holidaysResult = document.getElementById("holidaysResult");
 
     if (!holidays || !holidays.response) {
